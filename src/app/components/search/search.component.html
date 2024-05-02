@@ -1,0 +1,10 @@
+<h1>NEWS</h1>
+<div *ngFor="let item of cardsNews">
+  <mat-card >
+    <mat-card-header>
+      <mat-card-title>{{item.title}}</mat-card-title>
+      <mat-card-subtitle>{{item.time }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>{{item.url}}</mat-card-content>
+  </mat-card>
+</div>
