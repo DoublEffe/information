@@ -1,0 +1,11 @@
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened>
+    <mat-list role="list">
+      <mat-list-item role="listitem" routerLink="search" [routerLinkActive]="'active'">Search News</mat-list-item>
+      <mat-list-item role="listitem" routerLink="jobs" [routerLinkActive]="'active'">Search Jobs</mat-list-item>
+    </mat-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

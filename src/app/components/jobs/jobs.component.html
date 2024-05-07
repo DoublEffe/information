@@ -1,10 +1,10 @@
-<h1>NEWS</h1>
+<h1>JOBS</h1>
 <div *ngFor="let item of cardsNews; index as i">
   <mat-card >
-      <mat-card-header>
-        <mat-card-title>{{ item.title }}</mat-card-title>
-        <mat-card-subtitle>{{ item.time*1000 | date:'dd/mm/yyy' }}</mat-card-subtitle>
-      </mat-card-header>
+    <mat-card-header>
+      <mat-card-title>{{ item.title }}</mat-card-title>
+      <mat-card-subtitle>{{ item.time*1000 | date:'dd/mm/yyy' }}</mat-card-subtitle>
+    </mat-card-header>
     <mat-card-content>{{ item.url }}</mat-card-content>
     <mat-divider></mat-divider>
     <mat-accordion>
@@ -15,8 +15,8 @@
             {{ panelOpenState[i] ? 'Hide Details' : 'Show Details' }}
           </mat-panel-description>
         </mat-expansion-panel-header>
-        <p>Score of the news: {{ item.score }}</p>
-        <p>Type of the news: {{ item.type }}</p>
+        <p>Score of the jobs: {{ item.score }}</p>
+        <p>Type of the jobs: {{ item.type }}</p>
       </mat-expansion-panel>
     </mat-accordion>
   </mat-card>

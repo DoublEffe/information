@@ -1,52 +1,51 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SearchComponent } from './search.component';
+import { JobsComponent } from './jobs.component';
 import { ApiService } from '../../service/api.service';
-import { forkJoin, lastValueFrom, map, of, switchMap } from 'rxjs';
-import { AngularMaterialModule } from '../../angular-material/angular-material.module';
+import { forkJoin, map, of, switchMap } from 'rxjs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatCardHarness} from '@angular/material/card/testing';
-import {MatButtonHarness} from '@angular/material/button/testing';
-import {HarnessLoader} from '@angular/cdk/testing';
-import {TestbedHarnessEnvironment} from '@angular/cdk/testing/testbed';
+import { AngularMaterialModule } from '../../angular-material/angular-material.module';
+import { HarnessLoader } from '@angular/cdk/testing';
 import { Item } from '../../model/Item';
-import {MatAccordionHarness} from '@angular/material/expansion/testing';
+import { MatCardHarness } from '@angular/material/card/testing';
+import { MatAccordionHarness } from '@angular/material/expansion/testing';
+import { MatButtonHarness } from '@angular/material/button/testing';
+import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
 
-
-describe('SearchComponent', () => {
-  let component: SearchComponent;
-  let fixture: ComponentFixture<SearchComponent>;
+describe('JobsComponent', () => {
+  let component: JobsComponent;
+  let fixture: ComponentFixture<JobsComponent>;
   let apiServiceStub: Partial<ApiService>
   let loader: HarnessLoader;
 
+
   beforeEach(async () => {
     apiServiceStub = {
-      loadInfoNews() {
+      loadInfoJobs() {
           return of([{
             '0': 222222
           }])
       },
-      loadItemNews(item) {
+      loadItemJobs(item) {
           return of({
-            title: 'news title',
+            title: 'jobs title',
             time: 2222,
-            url :' news url'
+            url :' jobs url'
           },{
-            title: 'news title',
+            title: 'jobs title',
             time: 2222,
-            url :' news url'
-          }
-        )
+            url :' jobs url'
+          })
       },
     }
     await TestBed.configureTestingModule({
-      declarations: [SearchComponent],
+      declarations: [JobsComponent],
       providers: [{provide: ApiService, useValue: apiServiceStub}],
       imports: [AngularMaterialModule, BrowserAnimationsModule]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(SearchComponent);
+    fixture = TestBed.createComponent(JobsComponent);
     component = fixture.componentInstance;
     loader = TestbedHarnessEnvironment.loader(fixture);
     fixture.detectChanges();
@@ -59,12 +58,12 @@ describe('SearchComponent', () => {
   describe('all elements should be visible', () => {
     beforeEach(() => {
       component.numberToLoad = 1
-      const infoObservable = apiServiceStub.loadInfoNews().pipe(
+      const infoObservable = apiServiceStub.loadInfoJobs().pipe(
         map((data: {}) => Object.values(data).slice(0, component.numberToLoad))
       );
       const itemObservables = infoObservable.pipe(
         switchMap((itemNumbers: number[]) => {
-          const itemRequests = itemNumbers.map(itemNumber => apiServiceStub.loadItemNews(itemNumber));
+          const itemRequests = itemNumbers.map(itemNumber => apiServiceStub.loadItemJobs(itemNumber));
           return forkJoin(itemRequests);
         })
       );
@@ -78,7 +77,7 @@ describe('SearchComponent', () => {
       fixture.detectChanges()
       fixture.whenStable()
       const cards = await loader.getHarness(MatCardHarness)
-      expect(await cards.getTitleText()).toEqual('news title')
+      expect(await cards.getTitleText()).toEqual('jobs title')
     })
 
     it('number of cards shold be 1', async () => {
@@ -110,7 +109,7 @@ describe('SearchComponent', () => {
       const expans = await loader.getHarness(MatAccordionHarness)
       const expansPanel = await expans.getExpansionPanels()
       await expansPanel[0].expand()
-      expect(await expansPanel[0].getTextContent()).toBe('Score of the news: Type of the news:')
+      expect(await expansPanel[0].getTextContent()).toBe('Score of the jobs: Type of the jobs:')
     })
 
   })
