@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Observable, forkJoin, map, switchMap } from 'rxjs';
 import { Item } from '../../model/Item';
-import { ApiService } from '../../service/api.service';
+
+
 
 @Component({
   selector: 'app-common',
