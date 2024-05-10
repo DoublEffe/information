@@ -90,7 +90,7 @@ List things you need to use the software and how to install them.
 
 1. Clone the repo
    ```sh
-   git clone 
+   git clone https://github.com/DoublEffe/information.git
    ```
 2. Run npm install to install all necesssary packages
    ```sh
