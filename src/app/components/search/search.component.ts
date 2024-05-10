@@ -12,7 +12,7 @@ import { CommonComponent } from '../common/common.component';
   styleUrl: './search.component.css'
 })
 export class SearchComponent extends CommonComponent{
-  @Input() type: {}
+
 
   constructor(private apiService: ApiService) {
     super()

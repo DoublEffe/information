@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Observable, forkJoin, map, switchMap } from 'rxjs';
+import { Observable, combineLatest, forkJoin, map, switchMap } from 'rxjs';
 import { Item } from '../../model/Item';
 
 
@@ -37,7 +37,7 @@ export class CommonComponent {
     throw new Error('Method not implemented.');
   }
 
-  getItemObservable(itemNumber: number): any {
+  getItemObservable(itemNumber: number): Observable<Item> {
     throw new Error('Method not implemented.');
   }
 

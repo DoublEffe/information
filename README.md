@@ -1,27 +1,130 @@
-# Information
+<a name="readme-top"></a>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.3.
 
-## Development server
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+ 
+  <h3 align="center">COMMUNITYPOST</h3>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+  <p align="center">
+    A place for sharing ideas with and for your neighborhood
+    <br />
+    <a href=""><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="">View Demo</a>
+    ·
+    <a href="">Report Bug</a>
+    ·
+    <a href="">Request Feature</a>
+  </p>
+</div>
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+  </ol>
+</details>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-## Running end-to-end tests
+![Site Screen Shot]()
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+This project is meant to be a place where anyone can find the latest news easily also for jobs.
 
-## Further help
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+### Built With
+
+This page is build with Angular using Angular-material design.
+
+* [![Angular][Angular-url]][Angular.io]
+* [![Angular Material][Angular-material]][Angular-material.io]
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+
+List things you need to use the software and how to install them.
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
+* angular-cli
+  ```sh
+  npm install -g @angular/cli
+  ```
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone 
+   ```
+2. Run npm install to install all necesssary packages
+   ```sh
+   npm install
+   ```
+3. Run the project in local
+   ```sh
+   ng serve
+   ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+At the opening you will presented with a list of the latest news at the bottom there is a button to load more.
+
+![News screen shoot]()
+
+If you select at the side the Jobs section the page will show a list of the latest news at the bottom there is a button to load more.
+
+![Jobs screen shoot]()
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+[Angular.io]: https://angular.io/
+[Angular-url]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
+[Angular-material]: https://img.shields.io/badge/Angular%20Material-8A2BE2
+[Angular-material.io]: https://material.angular.io/

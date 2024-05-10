@@ -1,45 +1,29 @@
 import { Component } from '@angular/core';
 import { Item } from '../../model/Item';
 import { ApiService } from '../../service/api.service';
-import { forkJoin, map, switchMap } from 'rxjs';
+import { Observable, forkJoin, map, switchMap } from 'rxjs';
+import { CommonComponent } from '../common/common.component';
 
 @Component({
   selector: 'app-jobs',
   templateUrl: './jobs.component.html',
   styleUrl: './jobs.component.css'
 })
-export class JobsComponent {
-  numberToLoad = 10;
-  itemNumbers: unknown[] = []
-  cardsNews: Item[] = []
-  panelOpenState = {}
+export class JobsComponent extends CommonComponent{
   
-
-  constructor(private apiService: ApiService) {}
-
-  ngOnInit(): void {
-    const infoObservable = this.apiService.loadInfoJobs().pipe(
+  constructor(private apiService: ApiService) {
+    super()
+  }
+  
+  override getInfoObservable(): Observable<any> {
+    return this.apiService.loadInfoJobs().pipe(
       map((data: {}) => Object.values(data).slice(0, this.numberToLoad))
-    );
-  
-    const itemObservables = infoObservable.pipe(
-      switchMap((itemNumbers: number[]) => {
-        const itemRequests = itemNumbers.map(itemNumber => this.apiService.loadItemJobs(itemNumber));
-        return forkJoin(itemRequests);
-      })
-    );
-  
-   
-    itemObservables.subscribe((cardsNews: Item[]) => {
-      this.cardsNews = cardsNews;
-      this.panelOpenState = new Array(cardsNews.length).fill(false);
-    });
-    
+    )
   }
 
-  onLoad() {
-    this.numberToLoad += 10
-    this.ngOnInit() 
+  override getItemObservable(item: number): Observable<any> {
+    return this.apiService.loadItemJobs(item)
+      
   }
 
 }
