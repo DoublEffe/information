@@ -13,11 +13,11 @@
     <a href=""><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="">View Demo</a>
+    <a href="https://information-f0ccb.web.app/search">View Demo</a>
     ·
-    <a href="">Report Bug</a>
+    <a href="https://github.com/DoublEffe/information/issues">Report Bug</a>
     ·
-    <a href="">Request Feature</a>
+    <a href="https://github.com/DoublEffe/information/issues">Request Feature</a>
   </p>
 </div>
 
@@ -49,7 +49,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![Site Screen Shot]()
+![Site Screen Shot](https://github.com/DoublEffe/information/blob/main/screenshoots/news.png)
 
 This project is meant to be a place where anyone can find the latest news easily also for jobs.
 
@@ -110,11 +110,11 @@ List things you need to use the software and how to install them.
 
 At the opening you will presented with a list of the latest news at the bottom there is a button to load more.
 
-![News screen shoot]()
+![News screen shoot](https://github.com/DoublEffe/information/blob/main/screenshoots/news.png)
 
 If you select at the side the Jobs section the page will show a list of the latest news at the bottom there is a button to load more.
 
-![Jobs screen shoot]()
+![Jobs screen shoot](https://github.com/DoublEffe/information/blob/main/screenshoots/jobs.png)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
